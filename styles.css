@@ -1,0 +1,376 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background-color: #ffffff; */
+    
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, orange, gray);
+    padding: 15px 20px;
+    color: white;
+}
+
+.navbar h1 {
+    margin: 0;
+}
+
+.admin-section button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    background: #ddd;
+    padding: 10px;
+}
+
+.menu button {
+    background: #bbb;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.highlight {
+    background: #007bff;
+    color: white;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.add-btn {
+    background: rgba(131, 109, 109, 0.2);
+    border: 2px solid rgba(161, 165, 177, 0.4);
+    backdrop-filter: blur(10px);
+    color: rgb(29, 109, 206);
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 15px;
+    transition: 0.3s ease-in-out;
+    margin-bottom: 10px;
+}
+.add-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: scale(1.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    
+}
+
+.footer img {
+    width: 300px;
+    height: auto;
+    bottom: 20px;
+}
+
+/* Base button styles */
+.action-links button {
+    background: transparent; /* Transparent background */
+    border: 2px solid transparent; /* Transparent border */
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Delete button (Xóa) */
+.delete-btn {
+    color: red;
+    border-color: red;
+}
+
+.delete-btn:hover {
+    background: red;
+    color: white;
+}
+
+/* Edit button (Chỉnh sửa) */
+.edit-btn {
+    color: blue;
+    border-color: blue;
+}
+
+.edit-btn:hover {
+    background: blue;
+    color: white;
+}
+
+/* Modal Background */
+/* Modal Background */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+    background: white;
+    padding: 30px;
+    width: 60%;
+    max-width: 800px;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal Title */
+.modal-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form Layout - Increased Spacing */
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* INCREASED SPACING BETWEEN FIELDS */
+}
+
+/* Input Fields */
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+    width: 100%;
+    padding: 12px;  /* Increased padding */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px; /* Bigger text */
+}
+
+/* Increase height for textarea */
+.modal-content textarea {
+    height: 150px; /* More space for writing */
+}
+
+/* File Input Styling */
+.modal-content input[type="file"] {
+    padding: 8px;
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 14px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+    width: 100%;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        max-width: 500px;
+    }
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.cancel-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 14px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+}
+
+.cancel-btn:hover {
+    background-color: #b52b3a;
+}
+
+
+
+
+
+.bottom-left {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    width: 150px;
+    height: auto;
+    z-index: 999;
+}
+
+.bottom-right {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 150px;
+    height: auto;
+    z-index: 999;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.resume-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    max-width: 900px;
+    margin: 20px auto;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar Styling */
+.sidebar {
+    background: #1a2c47;
+    color: white;
+    padding: 20px;
+}
+
+.profile {
+    text-align: center;
+}
+
+.profile img {
+    width: 200px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+h2, h3, h4 {
+    color: white;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* Main Content */
+.main-content {
+    padding: 20px;
+}
+
+h2 {
+    color: #1a2c47;
+    border-bottom: 2px solid #1a2c47;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: #d8d3d3;
+}
+h4{
+    color: #000000;
+}
+
+p, ul {
+    font-size: 14px;
+}
+
+.job, .reference {
+    margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .resume-container {
+        display: block;
+    }
+    .sidebar {
+        text-align: center;
+    }
+}
