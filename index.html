@@ -3,108 +3,909 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Allah - Resume</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Marketing Manager Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        /* General Styles */
+        :root {
+            --primary-color: #1d2c4a;
+            --secondary-color: #4a90e2;
+            --accent-color: #ff6b6b;
+            --light-gray: #f5f7fa;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #fff;
+            --success: #28a745;
+            --border-radius: 8px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1c7b01, #6b5b95, #2a4073);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 30px 0;
+        }
+        
+        /* Resume Container */
+        .resume-container {
+            max-width: 1200px;
+            margin: 0 auto 50px;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Header Section */
+        .resume-header {
+            background: linear-gradient(135deg, #037a33, #6b5b95, #25a997);
+            padding: 40px;
+            color: var(--white);
+            position: relative;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-img-container {
+            margin-right: 40px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+            border-color: var(--secondary-color);
+        }
+
+        .header-text h1 {
+            font-size: 2.8rem;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-job-title {
+            font-size: 1.4rem;
+            font-weight: 300;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .header-contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .header-contact-item {
+            display: flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 8px 15px;
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+
+        .header-contact-item:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .header-contact-item i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+
+        /* Resume Layout */
+        .resume-layout {
+            display: flex;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 300px;
+            padding: 30px;
+            background-color: var(--white);
+            border-right: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .sidebar-section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .sidebar-section:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar h3 {
+            text-transform: uppercase;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .sidebar h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            border-radius: 3px;
+        }
+
+        .education-item {
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .education-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 7px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+        }
+
+        .education-year {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .education-degree {
+            font-weight: 500;
+        }
+
+        .education-university {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Skills */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-item {
+            background-color: var(--light-gray);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .skill-item:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* Languages */
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .language-name {
+            font-weight: 500;
+        }
+
+        .language-level {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            background-color: var(--light-gray);
+            padding: 3px 10px;
+            border-radius: 50px;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .content-section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 70px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            border-radius: 3px;
+        }
+
+        /* Work Experience */
+        .job-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 40px;
+        }
+
+        .job-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background-color: var(--secondary-color);
+            border-radius: 3px;
+        }
+
+        .job-company {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .job-period {
+            display: inline-block;
+            background-color: var(--light-gray);
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .job-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .job-duties {
+            padding-left: 20px;
+        }
+
+        .job-duties li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .job-duties li::before {
+            content: "•";
+            color: var(--secondary-color);
+            font-weight: bold;
+            position: absolute;
+            left: -15px;
+        }
+
+        /* References */
+        .references-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .reference-item {
+            background-color: var(--light-gray);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .reference-item:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .reference-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .reference-title {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+        }
+
+        .reference-contact {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .reference-contact i {
+            color: var(--secondary-color);
+            margin-right: 10px;
+            width: 16px;
+        }
+
+        /* Contact Form */
+        .contact-form-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #fff, #f8f9fa);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+        }
+
+        .contact-form-header {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            padding: 30px 40px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .contact-form-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-form-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .contact-form-content {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: var(--white);
+        }
+
+        .form-control:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+            outline: none;
+        }
+
+        textarea.form-control {
+            min-height: 180px;
+            resize: vertical;
+        }
+
+        .error-message {
+            color: var(--accent-color);
+            font-size: 0.85rem;
+            margin-top: 6px;
+            display: none;
+        }
+
+        .submit-button-container {
+            grid-column: span 2;
+            text-align: center;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: var(--white);
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .submit-btn:active {
+            transform: translateY(1px);
+        }
+
+        .success-message {
+            display: none;
+            padding: 20px;
+            background-color: rgba(40, 167, 69, 0.1);
+            border: 1px solid rgba(40, 167, 69, 0.2);
+            color: var(--success);
+            border-radius: var(--border-radius);
+            margin-top: 30px;
+            text-align: center;
+            grid-column: span 2;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .success-message i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .resume-layout {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            }
+
+            .contact-form-content {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+
+            .submit-button-container {
+                grid-column: span 1;
+            }
+
+            .success-message {
+                grid-column: span 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-img-container {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .header-contact {
+                justify-content: center;
+            }
+
+            .section-title::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .references-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-header h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        /* Hover Effects */
+        .hover-effect {
+            transition: var(--transition);
+        }
+
+        .hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 <body>
+    <!-- Resume Container -->
+    <div class="resume-container animate-fade-in">
+        <!-- Resume Header -->
+        <header class="resume-header">
+            <div class="header-content">
+                <div class="profile-img-container">
+                    <img src="keo_ngon-removebg-preview.png" alt="Profile Picture" class="profile-img">
+                </div>
+                <div class="header-text">
+                    <h1>MR Allah</h1>
+                    <div class="header-job-title">Marketing Manager</div>
+                    <div class="header-contact">
+                        <div class="header-contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+123-456-7890</span>
+                        </div>
+                        <div class="header-contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>hello@reallygreatsite.com</span>
+                        </div>
+                        <div class="header-contact-item">
+                            <i class="fas fa-globe"></i>
+                            <span>www.reallygreatsite.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-<div class="resume-container">
-    <div class="sidebar">
-        <div class="profile">
-            <img src="keo_ngon-removebg-preview.png" alt="Allah">
-            <h2>Allah</h2>
-            <p>Marketing Manager</p>
+        <!-- Resume Content -->
+        <div class="resume-layout">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Education Section -->
+                <div class="sidebar-section">
+                    <h3>Education</h3>
+                    <div class="education-item">
+                        <div class="education-year">2018 - 2020</div>
+                        <div class="education-degree">Master of Business Management</div>
+                        <div class="education-university">Wardiere University</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-year">2015 - 2018</div>
+                        <div class="education-degree">Bachelor of Business (GPA: 3.8/4.0)</div>
+                        <div class="education-university">Wardiere University</div>
+                    </div>
+                </div>
+
+                <!-- Skills Section -->
+                <div class="sidebar-section">
+                    <h3>Skills</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">Project Management</div>
+                        <div class="skill-item">Public Relations</div>
+                        <div class="skill-item">Leadership</div>
+                        <div class="skill-item">Time Management</div>
+                        <div class="skill-item">Communication</div>
+                        <div class="skill-item">Critical Thinking</div>
+                    </div>
+                </div>
+
+                <!-- Languages Section -->
+                <div class="sidebar-section">
+                    <h3>Languages</h3>
+                    <div class="language-item">
+                        <div class="language-name">English</div>
+                        <div class="language-level">Fluent</div>
+                    </div>
+                    <div class="language-item">
+                        <div class="language-name">French</div>
+                        <div class="language-level">Fluent</div>
+                    </div>
+                    <div class="language-item">
+                        <div class="language-name">German</div>
+                        <div class="language-level">Basics</div>
+                    </div>
+                    <div class="language-item">
+                        <div class="language-name">Spanish</div>
+                        <div class="language-level">Intermediate</div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Profile Section -->
+                <section class="content-section">
+                    <h2 class="section-title">Profile</h2>
+                    <p>A dynamic marketing professional with over 5 years of experience developing and executing comprehensive marketing strategies. Proven ability to lead high-performing teams and drive brand consistency across multiple channels. Passionate about leveraging data-driven insights to optimize marketing performance and achieve business objectives.</p>
+                </section>
+
+                <!-- Work Experience Section -->
+                <section class="content-section">
+                    <h2 class="section-title">Work Experience</h2>
+                    
+                    <div class="job-item">
+                        <div class="job-company">Borcello Studio</div>
+                        <div class="job-period">2030 - Present</div>
+                        <div class="job-title">Marketing Manager & Specialist</div>
+                        <ul class="job-duties">
+                            <li>Develop and execute comprehensive marketing strategies that align with business objectives.</li>
+                            <li>Lead, mentor, and manage a high-performing team of marketing professionals.</li>
+                            <li>Monitor brand consistency across multiple marketing channels to ensure unified messaging.</li>
+                            <li>Analyze campaign metrics and implement data-driven optimizations to improve performance.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="job-item">
+                        <div class="job-company">Fauget Studio</div>
+                        <div class="job-period">2025 - 2029</div>
+                        <div class="job-title">Marketing Manager & Specialist</div>
+                        <ul class="job-duties">
+                            <li>Created and managed marketing budgets exceeding $1M annually.</li>
+                            <li>Oversaw market research initiatives to identify emerging trends and opportunities.</li>
+                            <li>Monitored brand consistency across marketing channels to maintain cohesive brand identity.</li>
+                            <li>Collaborated with cross-functional teams to develop integrated marketing campaigns.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="job-item">
+                        <div class="job-company">Studio Shadwe</div>
+                        <div class="job-period">2024 - 2025</div>
+                        <div class="job-title">Marketing Manager & Specialist</div>
+                        <ul class="job-duties">
+                            <li>Developed and maintained strong relationships with strategic partners and stakeholders.</li>
+                            <li>Monitored and maintained brand consistency across all customer touchpoints.</li>
+                            <li>Implemented marketing automation solutions to improve efficiency and lead nurturing.</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <!-- References Section -->
+                <section class="content-section">
+                    <h2 class="section-title">References</h2>
+                    
+                    <div class="references-container">
+                        <div class="reference-item hover-effect">
+                            <div class="reference-name">Aliah Nu'albor</div>
+                            <div class="reference-title">Wardiere Inc. / CTO</div>
+                            <div class="reference-contact">
+                                <i class="fas fa-phone"></i> 
+                                <span>123-456-7890</span>
+                            </div>
+                            <div class="reference-contact">
+                                <i class="fas fa-envelope"></i>
+                                <span>hello@reallygreatsite.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Contact Form Container -->
+    <div class="contact-form-container animate-fade-in">
+        <div class="contact-form-header">
+            <h2>Get In Touch</h2>
+            <p>Feel free to contact me for any inquiries or opportunities</p>
         </div>
         
-        <div class="contact-info">
-            <h3>Contact</h3>
-            <p>📞 +123-456-7890</p>
-            <p>📧 hello@reallygreatsite.com</p>
-            <p>📍 </p>
-            <p>🌐 www.reallygreatsite.com</p>
-        </div>
-
-        <div class="education">
-            <h3>Education</h3>
-            <ul>
-                <li><strong>2029 - 2030</strong><br>Master of Business Management<br>Wardiere University</li>
-                <li><strong>2025 - 2029</strong><br>Bachelor of Business (GPA: 3.8/4.0)<br>Wardiere University</li>
-            </ul>
-        </div>
-
-        <div class="skills">
-            <h3>Skills</h3>
-            <ul>
-                <li>Project Management</li>
-                <li>Public Relations</li>
-                <li>Leadership</li>
-                <li>Time Management</li>
-                <li>Communication</li>
-                <li>Critical Thinking</li>
-            </ul>
-        </div>
-
-        <div class="languages">
-            <h3>Languages</h3>
-            <ul>
-                <li>English (Fluent)</li>
-                <li>French (Fluent)</li>
-                <li>German (Basics)</li>
-                <li>Spanish (Intermediate)</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="main-content">
-        <div class="section">
-            <h2>Profile</h2>
-            <p>.</p>
-        </div>
-
-        <div class="section">
-            <h2>Work Experience</h2>
-
-            <div class="job">
-                <h4>Borcelle Studio (2030 - Present)</h4>
-                <p><strong>Marketing Manager & Specialist</strong></p>
-                <ul>
-                    <li>Develop and execute comprehensive marketing strategies.</li>
-                    <li>Lead, mentor, and manage a high-performing team.</li>
-                    <li>Monitor brand consistency across marketing channels.</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h4>Fauget Studio (2025 - 2029)</h4>
-                <p><strong>Marketing Manager & Specialist</strong></p>
-                <ul>
-                    <li>Create and manage the marketing budget.</li>
-                    <li>Oversee market research to identify trends.</li>
-                    <li>Monitor brand consistency across marketing channels.</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h4>Studio Shodwe (2024 - 2025)</h4>
-                <p><strong>Marketing Manager & Specialist</strong></p>
-                <ul>
-                    <li>Develop and maintain strong relationships with partners.</li>
-                    <li>Monitor and maintain brand consistency.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>References</h2>
-
-            <div class="reference">
-                <p><strong>Allah hu akbar</strong><br>Wardiere Inc. / CTO<br>📞 123-456-7890<br>📧 hello@reallygreatsite.com</p>
+        <form id="contactForm" class="contact-form-content">
+            <div class="form-group">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" id="name" class="form-control" placeholder="Enter your full name">
+                <div id="nameError" class="error-message">Please enter your name</div>
             </div>
             
-        </div>
+            <div class="form-group">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" id="email" class="form-control" placeholder="Enter your email address">
+                <div id="emailError" class="error-message">Please enter a valid email address</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number">
+                <div id="phoneError" class="error-message">Please enter a valid phone number</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" id="subject" class="form-control" placeholder="Enter message subject">
+                <div id="subjectError" class="error-message">Please enter a subject</div>
+            </div>
+            
+            <div class="form-group full-width">
+                <label for="message" class="form-label">Your Message</label>
+                <textarea id="message" class="form-control" placeholder="Write your message here..."></textarea>
+                <div id="messageError" class="error-message">Please enter your message (at least 10 characters)</div>
+            </div>
+            
+            <div class="submit-button-container">
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+            </div>
+            
+            <div id="successMessage" class="success-message">
+                <i class="fas fa-check-circle"></i>
+                <h3>Thank You!</h3>
+                <p>Your message has been sent successfully. I'll get back to you soon!</p>
+            </div>
+        </form>
     </div>
-</div>
 
-</body>
-</html>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add animation classes to elements on page load
+            const elementsToAnimate = document.querySelectorAll('.job-item, .reference-item, .skill-item');
+            elementsToAnimate.forEach((element, index) => {
+                element.style.opacity = '0';
+                setTimeout(() => {
+                    element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+
+            // Form validation
+            const contactForm = document.getElementById('contactForm');
+            const successMessage = document.getElementById('successMessage');
+            
+            // Form validation function
+            function validateForm(e) {
+                e.preventDefault();
+                let isValid = true;
+                
+                // Validate name
+                const name = document.getElementById('name');
+                const nameError = document.getElementById('nameError');
+                if (!name.value.trim()) {
+                    nameError.style.display = 'block';
+                    name.style.borderColor = '#ff6b6b';
+                    isValid = false;
+                } else {
+                    nameError.style.display = 'none';
+                    name.style.borderColor = '';
+                }
+                
+                // Validate email
+                const email = document.getElementById('email');
+                const emailError = document.getElementById('emailError');
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!email.value.trim() || !emailPattern.test(email.value)) {
+                    emailError.style.display = 'block';
+                    email.style.borderColor = '#ff6b6b';
+                    isValid = false;
+                } else {
+                    emailError.style.display = 'none';
+                    email.style.borderColor = '';
+                }
+                
+                // Validate phone (optional but with format check if filled)
+                const phone = document.getElementById('phone');
+                const phoneError = document.getElementById('phoneError');
+                const phonePattern = /^[\d\s\-\+\(\)]{7,20}$/;
+                if (phone.value.trim() && !phonePattern.test(phone.value)) {
+                    phoneError.style.display = 'block';
+                    phone.style.borderColor = '#ff6b6b';
+                    isValid = false;
+                } else {
+                    phoneError.style.display = 'none';
+                    phone.style.borderColor = '';
+                }
+                
+                // Validate subject
+                const subject = document.getElementById('subject');
+                const subjectError = document.getElementById('subjectError');
+                if (!subject.value.trim()) {
+                    subjectError.style.display = 'block';
+                    subject.style.borderColor = '#ff6b6b';
+                    isValid = false;
+                } else {
+                    subjectError.style.display = 'none';
+                    subject.style.borderColor = '';
+                }
+                
+                // Validate message
+                const message = document.getElementById('message');
+                const messageError = document.getElementById('messageError');
+                if (!message.value.trim() || message.value.length < 10) {
+                    messageError.style.display = 'block';
+                    message.style.borderColor = '#ff6b6b';
+                    isValid = false;
+                } else {
+                    messageError.style.display = 'none';
+                    message.style.borderColor = '';
+                }
+                
+                // If form is valid, show success message with animation
+                if (isValid) {
+                    // Here you would typically send the form data to a server
+                    contactForm.reset();
+                    
+                    // Animate success message
+                    successMessage.style.display = 'block';
+                    successMessage.classList.add('animate__animated', 'animate__fadeIn');
+                    
+                    // Scroll to success message
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        successMessage.classList.add('animate__fadeOut');
+                        setTimeout(() => {
+                            successMessage.style.display = 'none';
+                            successMessage.classList.remove('animate__animated', 'animate__fadeIn', 'animate__fadeOut');
+                        }, 500);
+                    }, 5000);
+                }
+                
+                return isValid;
+            }
+            
+            // Add event listener to form
+            contactForm.addEventListener('submit', validateForm);
+            
+            // Add focus effects to input fields
+            const formControls = document.querySelectorAll('.form-control');
+            formControls.forEach(control => {
+                control.addEventListener('focus', function() {
+                    this.parentElement.classListthis.parentElement.classList.add('focused');
+                });
+
+                control.addEventListener('blur', function() {
+                    if (!this.value.trim()) {
+                        this.parentElement.classList.remove('focused');
+                    }
+                });
+            });
+        });
+</script>
